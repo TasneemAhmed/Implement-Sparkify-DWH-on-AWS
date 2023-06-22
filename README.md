@@ -18,6 +18,7 @@ You'll be working with two datasets that reside in S3. Here are the S3 links for
 The first dataset is a subset of real data from the Million Song Dataset. Each file is in **JSON** format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.
 
 song_data/A/B/C/TRABCEI128F424C983.json
+
 song_data/A/A/B/TRAABJL12903CDCF1A.json
 
 And below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.
@@ -32,7 +33,7 @@ The log files in the dataset you'll be working with are partitioned by year and 
 txt
 log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
-```
+
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.
 
 ![image](https://github.com/TasneemAhmed/Implement-Sparkify-DWH-on-AWS/assets/49993791/89314627-2194-4dbb-8fe8-cd7de169f17b)
@@ -60,10 +61,14 @@ start_time, hour, day, week, month, year, weekday
 # Project Template
 
 The project template includes four files:
+> **create_cluster.py** is where you'll create Redshift cluster ans assign IAM role to give access to it read only from S3
 
-> create_table.py is where you'll create your fact and dimension tables for the star schema in Redshift.
->etl.py is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
-> sql_queries.py is where you'll define you SQL statements, which will be imported into the two other files above.
+> **create_table.py** is where you'll create your fact and dimension tables for the star schema in Redshift.
+
+> **etl.py** is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
+
+> **sql_queries.py** is where you'll define you SQL statements, which will be imported into the two other files above.
+
 README.md is where you'll provide discussion on your process and decisions for this ETL pipeline.
 
 # Project Steps
